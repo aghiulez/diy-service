@@ -1,5 +1,8 @@
 # diy-service
-Backend services for DIY
+*Backend services for DIY*
 
 
-./mvnw install 
+**GETTING STARTED**
+* Run `./mvnw install` to frame the dependency tree based on the project configuration `pom.xml`
+
+* Run the application by using `./mvnw spring-boot:run`

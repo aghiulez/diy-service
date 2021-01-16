@@ -7,26 +7,27 @@
 
 
 
+
 version: '3.8'
 #Define Services
 services:
     #Backend service
-    # app-server:
-    #     # Configuration for building the docker image for the backend service
-    #     build:
-    #       context: diy-server # Use an image built from the specified dockerfile in the `polling-app-server` directory.
-    #       dockerfile: Dockerfile
-    #     ports:
-    #       - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
-    #     restart: always
-    #     depends_on: 
-    #       - db # This service depends on mysql. Start that first.
-    #     environment: # Pass environment variables to the service
-    #       SPRING_DATASOURCE_URL: 
-    #       SPRING_DATASOURCE_USERNAME: 
-    #       SPRING_DATASOURCE_PASSWORD: 
-    #     networks: # Networks to join (Services on the same network can communicate with each other using their name)
-    #       - backend
+    app-server:
+        # Configuration for building the docker image for the backend service
+        build:
+          context: diy-server # Use an image built from the specified dockerfile in the `polling-app-server` directory.
+          dockerfile: Dockerfile
+        ports:
+          - "8080:8080" # Forward the exposed port 8080 on the container to port 8080 on the host machine
+        restart: always
+        depends_on: 
+          - db # This service depends on mysql. Start that first.
+        environment: # Pass environment variables to the service
+          SPRING_DATASOURCE_URL: 
+          SPRING_DATASOURCE_USERNAME: 
+          SPRING_DATASOURCE_PASSWORD: 
+        networks: # Networks to join (Services on the same network can communicate with each other using their name)
+          - backend
 
     #Database Service (mySQL)
     db: 
@@ -35,10 +36,10 @@ services:
         - "3306:3306"
         restart: always
         environment:
-            MYSQL_DATABASE: DIY-DEV1
-            MYSQL_USER: root
-            MYSQL_PASSWORD: root
-            MYSQL_ROOT_PASSWORD: root
+            MYSQL_DATABASE: DIY-DEV1  #specify the name of a database to be created on image startup
+            MYSQL_USER: admin          #if user/pass are supplied with MYSQL_USER and MYSQL_PASSWORD, the user is created 
+            MYSQL_PASSWORD: admin     #and granted superuser access to this database (corresponding to GRANT ALL)
+            MYSQL_ROOT_PASSWORD: root #This variable specifies a password that is set for the MySQL root account.
         # volumes:
         # - db-data:/var/lib/mysql
         # networks:

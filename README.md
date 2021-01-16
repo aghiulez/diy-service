@@ -1,6 +1,6 @@
 # diy-service
 *Backend services for DIY*
-Bootstrapped w/ Spribbmbb`1 qwl
+Bootstrapped w/ Spring-Boot
 
 **miscellaneous extensions:**
 * Todo Tree : https://github.com/Gruntfuggly/todo-tree
@@ -14,3 +14,7 @@ Bootstrapped w/ Spribbmbb`1 qwl
 
 * Run the application by using `./mvnw spring-boot:run`
 
+
+
+**Dockerizing** 
+* Run `docker-compose up` to create the services....

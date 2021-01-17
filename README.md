@@ -1,6 +1,6 @@
 # diy-service
 *Backend services for DIY*
-Bootstrapped w/ Spribbmbb`1 qwl
+Bootstrapped w/ spring-boot
 
 **miscellaneous extensions:**
 * Todo Tree : https://github.com/Gruntfuggly/todo-tree
@@ -8,9 +8,12 @@ Bootstrapped w/ Spribbmbb`1 qwl
 
 
 
-
+---------------------------------------------------------------------
 **GETTING STARTED**
 * Run `./mvnw install` to frame the dependency tree based on the project configuration `pom.xml`
 
 * Run the application by using `./mvnw spring-boot:run`
-
+---------------------------------------------------------------------
+**DOCKER**
+* run the services within docker container(s)
+---------------------------------------------------------------------
